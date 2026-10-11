@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gravador em Loop</title>
+    <title>Gravador com Metrônomo</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js" defer></script>
 </head>
@@ -12,6 +12,21 @@
     <button id="meuBotao" class="estado-inicial">
         🎤 Clique para Começar a Gravar
     </button>
+
+    <!-- Barra inferior com o metrônomo visual e BPM -->
+    <div class="barra-tempo">
+        <div class="bolinhas">
+            <span class="bolinha"></span>
+            <span class="bolinha"></span>
+            <span class="bolinha"></span>
+            <span class="bolinha"></span>
+        </div>
+        
+        <div class="controle-bpm">
+            <label for="bpmInput">BPM:</label>
+            <input type="number" id="bpmInput" value="120" min="40" max="240">
+        </div>
+    </div>
 
 </body>
 </html>

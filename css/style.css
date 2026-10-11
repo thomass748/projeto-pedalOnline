@@ -11,12 +11,12 @@ body, html {
     font-family: Arial, sans-serif;
 }
 
-/* Deixa o botão ocupando a tela inteira */
+/* Botão principal de tela cheia */
 #meuBotao {
     width: 100vw;
     height: 100vh;
     border: none;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: bold;
     color: white;
     cursor: pointer;
@@ -25,22 +25,68 @@ body, html {
     text-align: center;
 }
 
-/* Estilos de cor para cada estado */
-.estado-inicial {
-    background-color: #2196F3; /* Azul */
-}
-
-.gravando {
-    background-color: #e53935; /* Vermelho */
-    animation: pulsar 1.2s infinite;
-}
-
-.tocando {
-    background-color: #4CAF50; /* Verde */
-}
+.estado-inicial { background-color: #2196F3; }
+.gravando { background-color: #e53935; animation: pulsar 1.2s infinite; }
+.tocando { background-color: #4CAF50; }
 
 @keyframes pulsar {
     0% { opacity: 1; }
     50% { opacity: 0.7; }
     100% { opacity: 1; }
+}
+
+/* Barra inferior do Metrônomo */
+.barra-tempo {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(5px);
+    padding: 12px 24px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Bolinhas do tempo */
+.bolinhas {
+    display: flex;
+    gap: 12px;
+}
+
+.bolinha {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: background-color 0.05s ease, transform 0.05s ease;
+}
+
+/* Estado aceso da bolinha */
+.bolinha.ativa {
+    background-color: #ffeb3b; /* Amarelo brilhante */
+    box-shadow: 0 0 12px #ffeb3b;
+    transform: scale(1.3);
+}
+
+/* Caixa de BPM */
+.controle-bpm {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+}
+
+.controle-bpm input {
+    width: 65px;
+    padding: 6px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: none;
+    text-align: center;
+    font-weight: bold;
 }
