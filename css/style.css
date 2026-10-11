@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* Deixa o botão ocupando a tela inteira */
+#meuBotao {
+    width: 100vw;
+    height: 100vh;
+    border: none;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilos de cor para cada estado */
+.estado-inicial {
+    background-color: #2196F3; /* Azul */
+}
+
+.gravando {
+    background-color: #e53935; /* Vermelho */
+    animation: pulsar 1.2s infinite;
+}
+
+.tocando {
+    background-color: #4CAF50; /* Verde */
+}
+
+@keyframes pulsar {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
